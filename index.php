@@ -9,6 +9,7 @@ use GetYourGuide\Parser;
 
 
 $driver="API";
+
 $resource = DriverFactory::create($driver);
 $product = new Product($resource->getResource(), new Parser);
 
