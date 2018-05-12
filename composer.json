@@ -1,0 +1,18 @@
+{
+  "name": "root/getyourguide",
+  "authors": [
+    {
+      "name": "HodaHussin",
+      "email": "hoda.hussin@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "GetYourGuide\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6"
+  }
+}
