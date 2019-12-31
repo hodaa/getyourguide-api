@@ -7,7 +7,7 @@ class Product
     private $resource;
     private $formatedProduct;
 
-    function __construct($resource, Parser $parser)
+    public function __construct($resource, Parser $parser)
     {
         $this->resource = $resource;
         $this->formatedProduct = $parser;
@@ -24,9 +24,7 @@ class Product
                 $itemEndDate < strtotime($end) &&
                 $item->places_available >= $travelersNo) {
                 $availableProduct[] = $this->formatedProduct->parse($item, $itemEndDate);
-
             }
-
         }
 
         usort($availableProduct, function ($a, $b) {
@@ -37,7 +35,7 @@ class Product
     }
 
 
-    function validateInputs($start, $end, $travelersNo)
+    public function validateInputs($start, $end, $travelersNo)
     {
         if ($travelersNo >= 30 || $travelersNo <= 0) {
             die("Number of travelers should be between 1 and 30");
@@ -52,10 +50,9 @@ class Product
         if (!$this->validateDate($end)) {
             die("Please Enter end date in  'Y-m-d\TH:i' format ");
         }
-
     }
 
-    function validateDate($date)
+    public function validateDate($date)
     {
         $format = 'Y-m-d\TH:i';
         $d = \DateTime::createFromFormat($format, $date);
@@ -66,8 +63,5 @@ class Product
     public function calculateEndDate($start, $duration)
     {
         return strtotime($start) + ($duration * 60);
-
     }
-
-
 }

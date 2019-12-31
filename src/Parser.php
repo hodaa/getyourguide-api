@@ -14,6 +14,5 @@ class Parser
                     date('Y-m-d\TH:i', $itemEndDate)
                 ]
         ];
-
     }
 }

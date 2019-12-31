@@ -5,10 +5,8 @@ use GetYourGuide\Parser;
 
 class ParserTest extends TestCase
 {
-
     public function testReturnIsJsonFormat()
     {
-
         $item = new stdClass();
         $item->product_id = 1;
         $item->activity_start_datetime = "2017-11-20T09:30";
@@ -21,7 +19,6 @@ class ParserTest extends TestCase
 
     public function testParsedDataAvailableStarttimes()
     {
-
         $item = new stdClass();
         $item->product_id = 1;
         $item->activity_start_datetime = "2017-11-20T09:30";
@@ -31,5 +28,4 @@ class ParserTest extends TestCase
 
         $this->assertTrue(is_array($result['available_starttimes']));
     }
-
 }

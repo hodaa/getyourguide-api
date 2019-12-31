@@ -8,8 +8,6 @@ use GetYourGuide\Parser;
 
 class ProductTest extends TestCase
 {
-
-
     public function testIsValidReturnArray()
     {
         $driver = "API";
