@@ -2,11 +2,8 @@
 
 namespace GetYourGuide\Drivers;
 
-
-
 class API
 {
-
     private $url;
 
     public function __construct($config)
@@ -18,11 +15,9 @@ class API
     {
         $content = @file_get_contents($this->url);
         if ($content === false) {
-            die("Error ! URl Not found");
-
+            die('Error ! URl Not found');
         }
+
         return json_decode($content);
-
     }
-
 }

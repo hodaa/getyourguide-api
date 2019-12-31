@@ -7,12 +7,11 @@ class Product
     private $resource;
     private $formatedProduct;
 
-    function __construct($resource, Parser $parser)
+    public function __construct($resource, Parser $parser)
     {
         $this->resource = $resource;
         $this->formatedProduct = $parser;
     }
-
 
     public function isAvailable($start, $end, $travelersNo)
     {
@@ -24,9 +23,7 @@ class Product
                 $itemEndDate < strtotime($end) &&
                 $item->places_available >= $travelersNo) {
                 $availableProduct[] = $this->formatedProduct->parse($item, $itemEndDate);
-
             }
-
         }
 
         usort($availableProduct, function ($a, $b) {
@@ -36,15 +33,14 @@ class Product
         return json_encode($availableProduct);
     }
 
-
-    function validateInputs($start, $end, $travelersNo)
+    public function validateInputs($start, $end, $travelersNo)
     {
         if ($travelersNo >= 30 || $travelersNo <= 0) {
-            die("Number of travelers should be between 1 and 30");
+            die('Number of travelers should be between 1 and 30');
         }
 
         if (empty($this->resource)) {
-            die("No Data Found");
+            die('No Data Found');
         }
         if (!$this->validateDate($start)) {
             die("Please Enter start date in  'Y-m-d\TH:i' format ");
@@ -52,22 +48,18 @@ class Product
         if (!$this->validateDate($end)) {
             die("Please Enter end date in  'Y-m-d\TH:i' format ");
         }
-
     }
 
-    function validateDate($date)
+    public function validateDate($date)
     {
         $format = 'Y-m-d\TH:i';
         $d = \DateTime::createFromFormat($format, $date);
+
         return $d && $d->format($format) == $date;
     }
-
 
     public function calculateEndDate($start, $duration)
     {
         return strtotime($start) + ($duration * 60);
-
     }
-
-
 }
