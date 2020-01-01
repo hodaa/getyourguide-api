@@ -9,10 +9,10 @@ class ParserTest extends TestCase
     {
         $item = new stdClass();
         $item->product_id = 1;
-        $item->activity_start_datetime = "2017-11-20T09:30";
+        $item->activity_start_datetime = '2017-11-20T09:30';
 
         $parser = new Parser();
-        $result = $parser->parse($item, strtotime("2017-11-21T09:30"));
+        $result = $parser->parse($item, strtotime('2017-11-21T09:30'));
 
         $this->assertArrayHasKey('available_starttimes', $result);
     }
@@ -21,10 +21,10 @@ class ParserTest extends TestCase
     {
         $item = new stdClass();
         $item->product_id = 1;
-        $item->activity_start_datetime = "2017-11-20T09:30";
+        $item->activity_start_datetime = '2017-11-20T09:30';
 
         $parser = new Parser();
-        $result = $parser->parse($item, strtotime("2017-11-21T09:30"));
+        $result = $parser->parse($item, strtotime('2017-11-21T09:30'));
 
         $this->assertTrue(is_array($result['available_starttimes']));
     }
