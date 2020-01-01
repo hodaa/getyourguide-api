@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.2-node-browsers
+    working_directory: ~/laravel
+    steps:
+      - checkout
+      - run: sudo apt-get update
+      - run: sudo apt install -y libsqlite3-dev python-pip python-dev build-essential apt-transport-https
+      - run: sudo composer self-update
+      - run: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+      - restore_cache:
+          keys:
+            - composer-v1-{{ checksum "composer.json" }}
+            - npm-v1-{{ checksum "package.json" }}
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.json" }}
+          paths:
+            - vendor
