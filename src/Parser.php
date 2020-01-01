@@ -11,6 +11,7 @@ class Parser
             'available_starttimes' => [
                 $item->activity_start_datetime,
                 date('Y-m-d\TH:i', $itemEndDate),
+
              ],
         ];
     }

@@ -1,6 +1,5 @@
 <?php
 
-
 use GetYourGuide\DriverFactory;
 use PHPUnit\Framework\TestCase;
 

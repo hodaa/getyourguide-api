@@ -2,7 +2,7 @@
 
 namespace GetYourGuide\Drivers;
 
-interface  DriverInterface
+interface DriverInterface
 {
     public function getResource();
 }

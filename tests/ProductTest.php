@@ -5,7 +5,6 @@ use GetYourGuide\Parser;
 use GetYourGuide\Product;
 use PHPUnit\Framework\TestCase;
 
-
 class ProductTest extends TestCase
 {
     public function testIsValidReturnArray()

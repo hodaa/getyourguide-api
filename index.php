@@ -1,6 +1,6 @@
 <?php
 
-require "vendor/autoload.php";
+require 'vendor/autoload.php';
 
 use GetYourGuide\DriverFactory;
 use GetYourGuide\Parser;
