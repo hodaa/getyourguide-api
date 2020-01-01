@@ -7,7 +7,6 @@ use GetYourGuide\DriverFactory;
 use GetYourGuide\Product;
 use GetYourGuide\Parser;
 
-
 $driver="API";
 
 $resource = DriverFactory::create($driver);
@@ -21,7 +20,3 @@ if (defined('STDIN')) {
 } else {
     die("Please use CLI not browser");
 }
-
-
-
-
