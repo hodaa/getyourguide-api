@@ -1,7 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+
 use GetYourGuide\DriverFactory;
+use PHPUnit\Framework\TestCase;
 
 class DriverFactoryTest extends TestCase
 {

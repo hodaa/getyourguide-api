@@ -1,8 +1,8 @@
 <?php
 return [
     'DB' => [
-        'host' => 'localhost',
-        'db' => 'assignment',
+        'host'     => 'localhost',
+        'db'       => 'assignment',
         'username' => 'avi',
         'password' => '123456', ],
     'API' => [

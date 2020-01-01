@@ -1,7 +1,7 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use GetYourGuide\Parser;
+use PHPUnit\Framework\TestCase;
 
 class ParserTest extends TestCase
 {

@@ -1,9 +1,10 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-use GetYourGuide\Product;
 use GetYourGuide\DriverFactory;
 use GetYourGuide\Parser;
+use GetYourGuide\Product;
+use PHPUnit\Framework\TestCase;
+
 
 class ProductTest extends TestCase
 {
